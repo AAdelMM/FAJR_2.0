@@ -1,0 +1,1 @@
+ECUAL/7SEG/7seg.d ECUAL/7SEG/7seg.o: ../ECUAL/7SEG/7seg.c
