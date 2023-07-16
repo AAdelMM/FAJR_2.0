@@ -6,48 +6,47 @@
  */ 
  
 #include "APP.h"
- 
-   
+
+void checking(void){
+	//initializing
+	lcd_init();
+	//reset lcd and calls signals
+	
+	//welcome screen with testing calls signals and 7 segment
+	lcd_command(0x01); //clear display
+	lcd_command(0x80); // Set cursor at the beginning of the first line
+	lcd_string("Empironics"); // Display a string on the LCD
+	PORTC |=(1 << 1);          //clock for lcd
+	PORTC &= ~(1 << 1);
+	for(uint8_t i=0; i<15; i++)
+	{
+		_delay_ms(50);
+		inc_shiftOut(callsNumber[i]);
+		exc_shiftOut(callsNumber[i]);
+		dis_shiftOut(sevenSegment[i]);
+	}
+}  
 void appStart(){
-  	 shiftInit();
-	 lcd_init(); // Initialize the LCD
-	  uint8_t i=0;
-	  //application main loop
-	  while (1) {
-		  
-		  lcd_command(0x80); // Set cursor at the beginning of the first line
-		  lcd_string("Empironics..."); // Display a string on the LCD
-		  //PORTD |= (1 << SR_CLK_PIN);
-		  PORTC |=(1 << 1);          //clock for lcd
-		  //PORTD &= ~(1 << SR_CLK_PIN);
-		  PORTC &= ~(1 << 1);
-		  _delay_ms(1000); // Wait for 1 second
-		  
-		  //lcd_command(0xC0); // Set cursor at the beginning of the second line
-		  lcd_set_cursor(1,5);
-		  lcd_number(i);
-		  dis_shiftOut(sevenSegment[i]);
-		  if(i>7){
-			exc_shiftOut(callsNumber[i-8]);
-			inc_shiftOut(0);
-		  }else{
-			inc_shiftOut(callsNumber[i]);
-			exc_shiftOut(0);
-		  }
-		 moveTEST(i);
-		  
-		//  lcd_string("Ahmed"); // Display another string on the LCD
-		  _delay_ms(1000); // Wait for 1 second
-		  lcd_command(0x01);
-		  _delay_ms(1000);
-		  
-		  
-		  i++;
-		  if(i>15){
-			i = 0;
-		  }
-		//  PORTC |=(1 << DIS_CLK_PIN);
-		 // dis_shiftOut(sevenSegment[2]);
-		  
-	  }
+	//shaftSignal();	
+	/*here the main application sequence
+	************************************
+	1- initialize all outputs and inputs
+	2- reset lcd and calls signals 
+	3- welcome screen with testing calls signals and 7 segment
+	& check programming mode and enter it if active
+	4- load saved data in eeprom
+	5- display current floor and shaft status
+	6- check if inspection state is not active run in inspection mode 
+	7- check calls input and record calls then if safety is o.k run the elevator according to specific direction
+	*/
+
+	
+	
+	//checking programming mode 
+	//if programming switch is active then go to programming mode 
+	if(!(PINA & (1 << Enter)))
+	{
+		_delay_ms(500);
+		program();
+	}
 }

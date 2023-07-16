@@ -1,0 +1,2 @@
+APPLICATION/Ins_mode/INS.d APPLICATION/Ins_mode/INS.o: \
+ ../APPLICATION/Ins_mode/INS.c

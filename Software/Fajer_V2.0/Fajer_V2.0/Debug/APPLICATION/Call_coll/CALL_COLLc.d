@@ -1,0 +1,2 @@
+APPLICATION/Call_coll/CALL_COLLc.d APPLICATION/Call_coll/CALL_COLLc.o: \
+ ../APPLICATION/Call_coll/CALL_COLLc.c

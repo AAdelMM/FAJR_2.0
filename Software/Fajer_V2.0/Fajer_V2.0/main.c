@@ -6,10 +6,15 @@
  */ 
 #include "./APPLICATION/APP.h"
 
+
 int main() {
  	
- 	
- 	appStart();
+	checking();
+
+ 	while(1)
+	{
+		appStart();
+	}
  	
 	return 0;
  }

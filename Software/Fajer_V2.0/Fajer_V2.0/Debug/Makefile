@@ -33,6 +33,13 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../APPLICATION/Ins_mode \
+../APPLICATION/Movement \
+../APPLICATION/Dis_mode \
+../APPLICATION/Call_coll \
+../APPLICATION/Shaft_coll \
+../APPLICATION/Norm_mode \
+../APPLICATION/Prog_mode \
 ../ECUAL/LCD \
 ../ECUAL/MULTIPLEXER \
 ../ECUAL/BUTTON \
@@ -59,6 +66,13 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../APPLICATION/APP.c \
+../APPLICATION/Call_coll/CALL_COLLc.c \
+../APPLICATION/Dis_mode/DIS_MODE.c \
+../APPLICATION/Ins_mode/INS.c \
+../APPLICATION/Movement/Movement.c \
+../APPLICATION/Norm_mode/NORMAL_MODE.c \
+../APPLICATION/Prog_mode/PROG_MODE.c \
+../APPLICATION/Shaft_coll/SHAFT_COLL.c \
 ../ECUAL/7SEG/_7seg.c \
 ../ECUAL/BUTTON/BUTTON.c \
 ../ECUAL/CALLS/calls.c \
@@ -87,6 +101,13 @@ ASM_SRCS +=
 
 OBJS +=  \
 APPLICATION/APP.o \
+APPLICATION/Call_coll/CALL_COLLc.o \
+APPLICATION/Dis_mode/DIS_MODE.o \
+APPLICATION/Ins_mode/INS.o \
+APPLICATION/Movement/Movement.o \
+APPLICATION/Norm_mode/NORMAL_MODE.o \
+APPLICATION/Prog_mode/PROG_MODE.o \
+APPLICATION/Shaft_coll/SHAFT_COLL.o \
 ECUAL/7SEG/_7seg.o \
 ECUAL/BUTTON/BUTTON.o \
 ECUAL/CALLS/calls.o \
@@ -108,6 +129,13 @@ OPERATIONS/SHAFT_SIGNAL/SHAFT.o
 
 OBJS_AS_ARGS +=  \
 APPLICATION/APP.o \
+APPLICATION/Call_coll/CALL_COLLc.o \
+APPLICATION/Dis_mode/DIS_MODE.o \
+APPLICATION/Ins_mode/INS.o \
+APPLICATION/Movement/Movement.o \
+APPLICATION/Norm_mode/NORMAL_MODE.o \
+APPLICATION/Prog_mode/PROG_MODE.o \
+APPLICATION/Shaft_coll/SHAFT_COLL.o \
 ECUAL/7SEG/_7seg.o \
 ECUAL/BUTTON/BUTTON.o \
 ECUAL/CALLS/calls.o \
@@ -129,6 +157,13 @@ OPERATIONS/SHAFT_SIGNAL/SHAFT.o
 
 C_DEPS +=  \
 APPLICATION/APP.d \
+APPLICATION/Call_coll/CALL_COLLc.d \
+APPLICATION/Dis_mode/DIS_MODE.d \
+APPLICATION/Ins_mode/INS.d \
+APPLICATION/Movement/Movement.d \
+APPLICATION/Norm_mode/NORMAL_MODE.d \
+APPLICATION/Prog_mode/PROG_MODE.d \
+APPLICATION/Shaft_coll/SHAFT_COLL.d \
 ECUAL/7SEG/_7seg.d \
 ECUAL/BUTTON/BUTTON.d \
 ECUAL/CALLS/calls.d \
@@ -150,6 +185,13 @@ OPERATIONS/SHAFT_SIGNAL/SHAFT.d
 
 C_DEPS_AS_ARGS +=  \
 APPLICATION/APP.d \
+APPLICATION/Call_coll/CALL_COLLc.d \
+APPLICATION/Dis_mode/DIS_MODE.d \
+APPLICATION/Ins_mode/INS.d \
+APPLICATION/Movement/Movement.d \
+APPLICATION/Norm_mode/NORMAL_MODE.d \
+APPLICATION/Prog_mode/PROG_MODE.d \
+APPLICATION/Shaft_coll/SHAFT_COLL.d \
 ECUAL/7SEG/_7seg.d \
 ECUAL/BUTTON/BUTTON.d \
 ECUAL/CALLS/calls.d \
@@ -184,6 +226,55 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 APPLICATION/APP.o: ../APPLICATION/APP.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Call_coll/CALL_COLLc.o: ../APPLICATION/Call_coll/CALL_COLLc.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Dis_mode/DIS_MODE.o: ../APPLICATION/Dis_mode/DIS_MODE.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Ins_mode/INS.o: ../APPLICATION/Ins_mode/INS.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Movement/Movement.o: ../APPLICATION/Movement/Movement.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Norm_mode/NORMAL_MODE.o: ../APPLICATION/Norm_mode/NORMAL_MODE.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Prog_mode/PROG_MODE.o: ../APPLICATION/Prog_mode/PROG_MODE.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APPLICATION/Shaft_coll/SHAFT_COLL.o: ../APPLICATION/Shaft_coll/SHAFT_COLL.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega644p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega644p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

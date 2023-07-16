@@ -19,7 +19,12 @@ APPLICATION/APP.d APPLICATION/APP.o: ../APPLICATION/APP.c \
  ../APPLICATION/../ECUAL/SHIFT_REGISTER/../CALLS/CALLS.h \
  ../APPLICATION/../ECUAL/LCD/LCD.h \
  ../APPLICATION/../ECUAL/LCD/../../MCAL/DIO/DIO.h \
- ../APPLICATION/../ECUAL/LCD/../SHIFT_REGISTER/SHIFT.h
+ ../APPLICATION/../ECUAL/LCD/../SHIFT_REGISTER/SHIFT.h \
+ ../APPLICATION/./Shaft_coll/SHAFT_COLL.h \
+ ../APPLICATION/./Shaft_coll/../../MCAL/DIO/DIO.h \
+ ../APPLICATION/./Prog_mode/PROG_MODE.h \
+ ../APPLICATION/./Prog_mode/../../ECUAL/LCD/LCD.h \
+ ../APPLICATION/./Prog_mode/../../MCAL/DIO/DIO.h
 
 ../APPLICATION/APP.h:
 
@@ -64,3 +69,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../APPLICATION/../ECUAL/LCD/../../MCAL/DIO/DIO.h:
 
 ../APPLICATION/../ECUAL/LCD/../SHIFT_REGISTER/SHIFT.h:
+
+../APPLICATION/./Shaft_coll/SHAFT_COLL.h:
+
+../APPLICATION/./Shaft_coll/../../MCAL/DIO/DIO.h:
+
+../APPLICATION/./Prog_mode/PROG_MODE.h:
+
+../APPLICATION/./Prog_mode/../../ECUAL/LCD/LCD.h:
+
+../APPLICATION/./Prog_mode/../../MCAL/DIO/DIO.h:

@@ -20,10 +20,10 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
     <ResetRule>0</ResetRule>
     <eraseonlaunchrule>0</eraseonlaunchrule>
@@ -40,6 +40,19 @@
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E960A</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -124,6 +137,48 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APPLICATION\APP.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Call_coll\CALL_COLL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Call_coll\CALL_COLLc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Dis_mode\DIS_MODE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Dis_mode\DIS_MODE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Ins_mode\INS.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Ins_mode\INS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Movement\Movement.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Movement\Movement.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Norm_mode\NORMAL_MODE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Norm_mode\NORMAL_MODE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Prog_mode\PROG_MODE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Prog_mode\PROG_MODE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Shaft_coll\SHAFT_COLL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APPLICATION\Shaft_coll\SHAFT_COLL.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="ECUAL\7SEG\_7seg.c">
@@ -233,6 +288,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="APPLICATION\Ins_mode" />
+    <Folder Include="APPLICATION\Movement" />
+    <Folder Include="APPLICATION\Dis_mode" />
+    <Folder Include="APPLICATION\Call_coll" />
+    <Folder Include="APPLICATION\Shaft_coll" />
+    <Folder Include="APPLICATION\Norm_mode" />
+    <Folder Include="APPLICATION\Prog_mode" />
     <Folder Include="ECUAL\LCD" />
     <Folder Include="ECUAL\MULTIPLEXER" />
     <Folder Include="ECUAL\BUTTON" />
